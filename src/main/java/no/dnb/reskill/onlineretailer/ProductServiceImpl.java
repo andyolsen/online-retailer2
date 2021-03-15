@@ -45,7 +45,7 @@ public class ProductServiceImpl implements ProductService{
                 filter(p -> p.getId() == productId).
                 findFirst();
 
-        return matchingObject.get();
+        return matchingObject.orElse(null);
     }
 
     @Override
@@ -62,6 +62,6 @@ public class ProductServiceImpl implements ProductService{
                 filter(p -> p.getName().equals(productName)).
                 findFirst();
 
-        return matchingObject.get();
+        return matchingObject.orElse(null);
     }
 }

@@ -21,6 +21,7 @@ public class Application {
         System.out.println("Found the product: " + productService.findInStock(2));
 
         productService.deleteFromStock(3);
+        System.out.println(productService.findInStock(3));
 
     }
 

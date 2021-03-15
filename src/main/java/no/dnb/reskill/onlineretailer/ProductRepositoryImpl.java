@@ -4,25 +4,26 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.stream.Stream;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
-    ArrayList<Product> listPfProducts = new ArrayList<>();
+    ArrayList<Product> listOfProducts = new ArrayList<>();
 
 
     @Override
     public void addProduct(Product product) {
-        listPfProducts.add(product);
+        listOfProducts.add(product);
         System.out.printf("Product, %s, %d, %f, added to the stock\n", product.getName(), product.getId(), product.getPrice());
 
     }
 
     @Override
     public boolean deleteProduct(int productId) {
-        for (Product p: listPfProducts){
-            if(p.getId()==productId){
-                listPfProducts.remove(p);
-                System.out.printf("Product, %s, %d, %f, removed from the stock\n", p.getName(), p.getId(), p.getPrice());
+        for (Product p: listOfProducts) {
+            if (p.getId() == productId) {
+                listOfProducts.remove(p);
                 return true;
             }
         }
@@ -31,6 +32,6 @@ public class ProductRepositoryImpl implements ProductRepository {
 
     @Override
     public Collection<Product> findAllProducts() {
-        return listPfProducts;
+        return listOfProducts;
     }
 }
