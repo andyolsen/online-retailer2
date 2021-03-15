@@ -17,8 +17,8 @@ public class Application {
         productService.addToStock(new Product(2,"butter", 35.5));
         productService.addToStock(new Product(3,"milk", 15.8));
 
-        System.out.println(productService.findInStock("bread"));
-        System.out.println(productService.findInStock(2));
+        System.out.println("Found the product: " + productService.findInStock("bread"));
+        System.out.println("Found the product: " + productService.findInStock(2));
 
         productService.deleteFromStock(3);
 
