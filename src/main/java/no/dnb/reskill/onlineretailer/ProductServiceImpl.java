@@ -41,6 +41,7 @@ public class ProductServiceImpl implements ProductService{
 
         */
 
+        // FROM ANDY: This "lookup logic" should live in the repository class, not the service class.
         Optional<Product> matchingObject = repository.findAllProducts().stream().
                 filter(p -> p.getId() == productId).
                 findFirst();
@@ -58,6 +59,7 @@ public class ProductServiceImpl implements ProductService{
         return null;
 
          */
+        // FROM ANDY: This "lookup logic" should live in the repository class, not the service class.
         Optional<Product> matchingObject = repository.findAllProducts().stream().
                 filter(p -> p.getName().equals(productName)).
                 findFirst();
