@@ -9,9 +9,12 @@ import java.util.stream.Stream;
 
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
+    
+    // FROM ANDY: Could be a HashMap, to faciloitate easier lookup-by-id.
     ArrayList<Product> listOfProducts = new ArrayList<>();
 
 
+    // FROM ANDY: Typically you don't know the id unit insertion (into database). Therefore you should return the id (and/or assign the id in the Product object).
     @Override
     public void addProduct(Product product) {
         listOfProducts.add(product);
